@@ -1,0 +1,26 @@
+{
+  "name": "coronavirus-api",
+  "version": "1.0.0",
+  "description": "api dedicated to serve Coronavirus data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aitahtman/coronavirus-api.git"
+  },
+  "keywords": [
+    "coronavirusdata"
+  ],
+  "author": "aitahtman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aitahtman/coronavirus-api/issues"
+  },
+  "homepage": "https://github.com/aitahtman/coronavirus-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
