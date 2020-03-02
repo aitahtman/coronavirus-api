@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ."
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,8 @@
     "papaparse": "^5.1.1",
     "request": "^2.88.0",
     "scramjet": "^4.28.1"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
