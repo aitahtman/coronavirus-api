@@ -13,6 +13,18 @@ app.get('/', function (req, res) {
     res.send('Hello World!')
 })
 
+app.get('/getDataHisto', async (req, res) => {
+    const files = ["Confirmed", "Deaths", "Recovered"]
+    const results = {}
+    for (let i = 0; i < files.length; i++) {
+        const dataType = files[i];
+        results[dataType] = await CVData.getDataFromCSVByUrl(dataType)
+        console.log(results[dataType].histo.length, results[dataType].current.length)
+    }
+    res.send(results)
+})
+
+
 app.get('/getData', async (req, res) => {
     const files = ["Confirmed", "Deaths", "Recovered"]
     const results = {}
@@ -20,8 +32,8 @@ app.get('/getData', async (req, res) => {
         const dataType = files[i];
         results[dataType] = await CVData.getDataFromCSVByUrl(dataType)
     }
-    res.send(results)
-
+    const formatedResults = await CVData.mergeSheets(results, files)
+    res.send({ 'current': formatedResults })
 })
 
 app.listen(port, function () {
