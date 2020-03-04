@@ -21,7 +21,35 @@ When all dependencies are installed, execute ```npm start``` to run the API.
 
 ## Usage
 
-For getting times series and summarized data, use the route ```localhost:8080\getData``` with *GET* method
+To get only summarized data, use the route ```localhost:8080\getData``` with *GET* method
+```json
+{
+   "current": [
+      {
+         "province": "Anhui",
+         "country": "Mainland China",
+         "lat": "31.8257",
+         "long": "117.2264",
+         "date": "3/3/20",
+         "Confirmed": "990",
+         "Deaths": "6",
+         "Recovered": "936"
+      },
+      {
+         "province": "Beijing",
+         "country": "Mainland China",
+         "lat": "40.1824",
+         "long": "116.4142",
+         "date": "3/3/20",
+         "Confirmed": "414",
+         "Deaths": "8",
+         "Recovered": "288"
+      }
+      
+   ]
+} 
+```
+For getting times series and summarized data, use the route ```localhost:8080\getDataHisto``` with *GET* method
 
 ```json
 {
