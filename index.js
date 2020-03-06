@@ -36,7 +36,7 @@ app.get('/getData', async (req, res) => {
 
     const stats = await CVData.getStats(results, files)
 
-    res.send({ 'current': results, 'stats': stats })
+    res.send({ 'current': formatedResults, 'stats': stats })
 
 
 })
