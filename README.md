@@ -21,7 +21,7 @@ When all dependencies are installed, execute ```npm start``` to run the API.
 
 ## Usage
 
-To get only summarized data, use the route ```localhost:8080\getData``` with *GET* method
+To get only summarized data with evolution stats of the confirmed cases,deaths and recovered , use the route ```localhost:8080\getData``` with *GET* method
 ```json
 {
    "current": [
@@ -46,7 +46,28 @@ To get only summarized data, use the route ```localhost:8080\getData``` with *GE
          "Recovered": "288"
       }
       
-   ]
+   ],
+   //  with evolution stats of the confirmed cases,deaths and recovered 
+
+   "stats": {
+        "Confirmed": [
+            {
+                "date": "1/22/20",
+                "value": 555
+            },
+            {
+                "date": "1/23/20",
+                "value": 653
+            },
+            {
+                "date": "1/24/20",
+                "value": 941
+            }
+            ...
+        ],
+        "Deaths":[ ],
+        "Recovered":[]
+}
 } 
 ```
 For getting times series and summarized data, use the route ```localhost:8080\getDataHisto``` with *GET* method
@@ -108,6 +129,8 @@ For getting times series and summarized data, use the route ```localhost:8080\ge
       ]
    }
 }
+
+
 ```
 ## Contributing
 All bug reports and pull requests are welcome.
