@@ -33,7 +33,12 @@ app.get('/getData', async (req, res) => {
         results[dataType] = await CVData.getDataFromCSVByUrl(dataType)
     }
     const formatedResults = await CVData.mergeSheets(results, files)
-    res.send({ 'current': formatedResults })
+
+    const stats = await CVData.getStats(results, files)
+
+    res.send({ 'current': results, 'stats': stats })
+
+
 })
 
 app.listen(port, function () {
