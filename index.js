@@ -8,7 +8,7 @@ app.use(function (request, response, next) {
     response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
-
+    
 app.get('/', function (req, res) {
     res.send('Hello World!')
 })
