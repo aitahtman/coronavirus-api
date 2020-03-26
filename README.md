@@ -63,10 +63,8 @@ To get only summarized data with evolution stats of the confirmed cases,deaths a
                 "date": "1/24/20",
                 "value": 941
             }
-            ...
         ],
-        "Deaths":[ ],
-        "Recovered":[]
+        "Deaths":[ ]
 }
 } 
 ```
@@ -119,14 +117,6 @@ For getting times series and summarized data, use the route ```localhost:8080\ge
       "current":[
 
       ]
-   },
-   "Recovered":{
-      "histo":[
-
-      ],
-      "current":[
-
-      ]
    }
 }
 
@@ -134,3 +124,10 @@ For getting times series and summarized data, use the route ```localhost:8080\ge
 ```
 ## Contributing
 All bug reports and pull requests are welcome.
+
+
+## CHANGE TRACKER
+
+- March 22, 2020 : Recovered cases variable is no longer updated 
+
+
