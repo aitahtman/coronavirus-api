@@ -8,36 +8,36 @@ app.use(function (request, response, next) {
     response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
-    
+
 app.get('/', function (req, res) {
     res.send('Hello World!')
 })
 
 app.get('/getDataHisto', async (req, res) => {
-    const files = ["Confirmed", "Deaths", "Recovered"]
+    const files = ["confirmed", "deaths"]
     const results = {}
     for (let i = 0; i < files.length; i++) {
         const dataType = files[i];
         results[dataType] = await CVData.getDataFromCSVByUrl(dataType)
-        console.log(results[dataType].histo.length, results[dataType].current.length)
     }
     res.send(results)
 })
 
 
 app.get('/getData', async (req, res) => {
-    const files = ["Confirmed", "Deaths", "Recovered"]
+    const files = ["confirmed", "deaths"]
+
     const results = {}
     for (let i = 0; i < files.length; i++) {
         const dataType = files[i];
         results[dataType] = await CVData.getDataFromCSVByUrl(dataType)
     }
+
     const formatedResults = await CVData.mergeSheets(results, files)
 
     const stats = await CVData.getStats(results, files)
 
     res.send({ 'current': formatedResults, 'stats': stats })
-
 
 })
 
